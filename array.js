@@ -92,3 +92,17 @@ function main() {
 //Although JS does not actaully have a private operator, other languages do. the "_" is just to let devs know DO NOT TOUCH OUTSIDE OF THE CLASS.
 
 main();
+
+/*
+  2. length is 6 because we have 6 values in the array.
+     capacity is 12 because once we surpass the original capacity of 3, we multiply the new length of 4 times the SIZE_RATIO, giving us 12
+     memory address is 3 because once we surpass the original capacity when length becomes 4, we run memory.allocate to find an appropriate memory block for new capacity. Since nothing else is in mem, it goes to index 3 (4th position in mem)
+     results of the new lines is an array containing [3, 5, 15, 19, 45, 10]
+  3. length is 3 - pop reduces length by 1 each time
+     capacity is 12 - pop has no affect on capacity
+     ptr is 3 - pop doesn't move the array, so everything is in the same position
+     results of the program after the new lines of code is an array containing [3, 5, 15]
+  4. first item before empty is 3
+     adding 'tauhida' results in NaN - the memory allocation is for float64 numbers, does not accept strings
+     resize only grows the array when length surpasses capacity - it does not resize when items are removed
+*/
